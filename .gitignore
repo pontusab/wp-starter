@@ -1,2 +1,3 @@
 .tmpl_cache/
 config/local.php
+.htaccess
