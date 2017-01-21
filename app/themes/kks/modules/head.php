@@ -1,7 +1,7 @@
 <header>
 	<div class="logo">
 		<h1>
-			<a href="{{get_bloginfo('url')}}" id="logo">{{ get_bloginfo('name') }}</a>
+			<a href="{{get_bloginfo('url')}}">{{ get_bloginfo('name') }}</a>
 		</h1>
 	</div>
 
