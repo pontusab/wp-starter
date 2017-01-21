@@ -35,9 +35,6 @@ class Backend {
     add_action('init', [&$this, 'change_post_object']);
     add_action('admin_enqueue_scripts', [&$this, 'admin_style']);
     add_action('admin_init', [&$this, 'editor_hide']);
-
-    add_action('admin_menu', [&$this, 'add_cm_menu']);
-    add_action('admin_init', [&$this, 'redirect_to_cm'], 1 );
   }
 
 
@@ -168,7 +165,7 @@ class Backend {
 
 
   public function tinymce_style() {
-    add_editor_style( home_url() . '/css/editor.css' );
+    add_editor_style( home_url() . '/assets/css/editor.css' );
   }
 
   public function editor_hide() {
@@ -181,7 +178,7 @@ class Backend {
   }
 
   public function admin_style() {
-    wp_enqueue_style('admin-style', str_replace('wp', '', site_url()) . '/css/admin.css', null, 2);
+    wp_enqueue_style('admin-style', str_replace('wp', '', site_url()) . '/assets/css/admin.css', null, 2);
 	}
 
   public function remove_footer_admin() {
@@ -198,17 +195,6 @@ class Backend {
     if (current_user_can('researcher')) exit(wp_redirect(home_url( '/' )));
   }
 
-  // File: ~Super Important Document~.pdf
-  // Default WordPress: Super-Important-Document.pdf
-  // Custom Solution: super-important-document.pdf
-  //
-  // File: ÐÕçument full of $$$.pdf
-  // Default WordPress: ÐÕçument-full-of-.pdf
-  // Custom Solution: document-full-of.pdf
-  //
-  // File: Really%20Ugly%20Filename-_-That_-_Is_Too Common…..png
-  // Default WordPress: Really-Ugly-Filename-_-That_-_Is_Too-Common…..png
-  // Custom Solution: really-ugly-filename-that-is-too-common.png
   public function sanitize_file_name($filename) {
     $sanitized_filename = remove_accents($filename); // Convert to ASCII
 
@@ -227,18 +213,5 @@ class Backend {
   	$sanitized_filename = strtolower($sanitized_filename); // Lowercase
 
   	return $sanitized_filename;
-  }
-
-  function add_cm_menu() {
-    add_menu_page( 'Nyhetsbrev', 'Nyhetsbrev', 'manage_options', 'newsletter', 'function', 'dashicons-external', 1000 );
-  }
-
-  function redirect_to_cm() {
-    $menu_redirect = isset($_GET['page']) ? $_GET['page'] : false;
-
-    if($menu_redirect == 'newsletter' ) {
-        wp_redirect('https://kunskapsformedlingen.createsend.com');
-        exit();
-    }
   }
 }
