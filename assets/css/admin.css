@@ -1,0 +1,7 @@
+#collapse-menu,
+#footer-upgrade,
+#contextual-help-link,
+#contextual-help-link-wrap,
+#toplevel_page_gadash_settings {
+  display: none !important;
+}
