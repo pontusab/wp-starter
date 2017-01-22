@@ -5,11 +5,33 @@
       "name": "Pontus Abrahamsson",
       "email": "pontus@lostisland.co"
     }],
+    "repositories": [
+      {
+        "type": "package",
+        "package": {
+          "name": "advanced-custom-fields/advanced-custom-fields-pro",
+          "version": "5.5.5",
+          "type": "wordpress-plugin",
+          "dist": {
+            "type": "zip",
+            "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
+          },
+          "require": {
+            "philippbaschke/acf-pro-installer": "^1.0",
+            "composer/installers": "^1.0"
+          }
+        }
+      }
+    ],
     "require": {
       "johnpbloch/wordpress": "^4.7",
-        "timber/timber": "^1.2"
+      "timber/timber": "^1.2",
+      "advanced-custom-fields/advanced-custom-fields-pro": "*"
     },
     "extra": {
-      "wordpress-install-dir": "wp"
+      "wordpress-install-dir": "wp",
+      "installer-paths": {
+        "app/plugins/advanced-custom-fields-pro": ["advanced-custom-fields/advanced-custom-fields-pro"]
+      }
     }
 }
