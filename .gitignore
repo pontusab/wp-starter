@@ -3,3 +3,4 @@ config/local.php
 .htaccess
 
 /vendor/
+/wp
