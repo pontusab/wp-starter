@@ -22,6 +22,7 @@ if (strpos($host, 'dev' ) !== false) {
 }
 
 // Custom Settings
+define( 'ROOT_DIR', $root );
 define( 'WP_DOMAIN', $host );
 define( 'WP_HOME', $url );
 define( 'WP_SITEURL', $url . '/wp' );

@@ -7,7 +7,7 @@
     }],
     "require": {
       "johnpbloch/wordpress": "^4.7",
-      "timber/timber": "^1.2"
+        "timber/timber": "^1.2"
     },
     "extra": {
       "wordpress-install-dir": "wp"
