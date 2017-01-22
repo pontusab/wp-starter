@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>
+      {% if wp_title %}
+          {{ wp_title }} - {{ site.name }}
+      {% else %}
+          {{ site.name }}
+      {% endif %}
+    </title>
+		<meta name="description" content="">
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/ico" />
+		<link rel="stylesheet" href="/assets/css/app.css" />
+		{{ function('wp_head') }}
+	</head>
+	<body>
+    <div class="container">
+      {% include 'layout/head.twig' %}
+      {% block content %}{% endblock %}
+      {% include 'layout/footer.twig' %}
+    </div>
+  </body>
+
+  {{ function('wp_footer') }}
+</html>
