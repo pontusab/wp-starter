@@ -1,6 +1,7 @@
 .tmpl_cache/
 config/local.php
 .htaccess
+.env
 
 /vendor/
 /wp/
