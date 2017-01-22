@@ -1,5 +1,4 @@
 <?php
-$root = dirname(__DIR__);
 $protocol = 'http://';
 $host = $_SERVER['HTTP_HOST'];
 
@@ -26,7 +25,7 @@ define('WP_DOMAIN', $host);
 define('WP_HOME', $url);
 define('WP_SITEURL', $url . '/wp');
 define('CONTENT_DIR', '/app');
-define('WP_CONTENT_DIR', $root . CONTENT_DIR);
+define('WP_CONTENT_DIR', __DIR__ . CONTENT_DIR);
 define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
 define('WP_PLUGIN_URL', WP_HOME . '/app/plugins');
 define('WPLANG', 'sv_SE');
@@ -44,4 +43,4 @@ define('LOGGED_IN_SALT', getenv('LOGGED_IN_SALT'));
 define('NONCE_SALT', getenv('NONCE_SALT'));
 
 // Bootstrap WordPress
-if (!defined('ABSPATH')) define( 'ABSPATH', $root . '/wp/' );
+if (!defined('ABSPATH')) define( 'ABSPATH', __DIR__ . '/wp/' );
