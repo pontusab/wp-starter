@@ -192,3 +192,5 @@ class Frontend {
 		return strip_tags($clean_content, '<strong>');
 	}
 }
+
+Frontend::init();

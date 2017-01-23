@@ -2,12 +2,16 @@
 
 namespace Core;
 
+add_action('admin_init', function() {
+  new Backend();
+});
+
 class Backend {
-  private static $init;
+  private static $instance;
 
   public static function init() {
-    if (!isset(self::$init)) self::$init = new self;
-    return self::$init;
+    if (!isset(self::$instance)) self::$instance = new self;
+    return self::$instance;
   }
 
   public function __construct() {
@@ -96,7 +100,6 @@ class Backend {
     global $wp_post_types;
 
     $labels                     = &$wp_post_types['post']->labels;
-
     $labels->name               = 'Nyheter';
     $labels->singular_name      = 'Nyhet';
     $labels->add_new            = 'Skapa ny';
